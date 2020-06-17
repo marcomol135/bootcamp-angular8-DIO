@@ -15,7 +15,8 @@ import { StarComponent } from './star/star.component';
     StarComponent,
     CourseListComponent,
     ReplacePipe,
-    NavbarComponent
+    NavbarComponent,
+    Error404Component,
   ],
   imports: [
     BrowserModule,
