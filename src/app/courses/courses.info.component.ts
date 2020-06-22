@@ -15,11 +15,19 @@ export class CourseInfoComponent implements OnInit{
                 private CourseService: CourseService){}
 
     ngOnInit(): void{
-        this.course = this.CourseService.retrieveAllById(+this.activatedRoute.snapshot.paramMap.get('id'));
+        this.CourseService.retrieveAllById(+this.activatedRoute.snapshot.paramMap.get('id')).subscribe({
+            next: course => this.course =course,
+            error: err => console.log('Error: ',err) ,      
+        });
     }
     save():void{
-        this.CourseService.save(this.course);
+        this.CourseService.save(this.course).subscribe({
+            next: course =>console.log('Saved with success', course),
+            error: err => console.log('Error: ',err) ,  
+        });
     }
+
+    
 }
 
 // + this.activeRoute   sinal de + converte de string para number

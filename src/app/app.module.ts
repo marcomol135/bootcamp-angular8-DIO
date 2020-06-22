@@ -6,6 +6,7 @@ import { CourseListComponent } from './courses/course-list.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule} from '@angular/core';
 import { RouterModule} from '@angular/router';
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { StarComponent } from './star/star.component';
@@ -19,8 +20,10 @@ import { CourseInfoComponent } from './courses/courses.info.component';
     NavbarComponent,
     Error404Component,
     CourseInfoComponent,
+
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
